@@ -46,36 +46,43 @@ export class CategoriaComponent implements OnInit {
     this.dialog_visible=true
   }
 
-  guardarCategoria(){
-    if(this.categoria_id>0){
-      this.categoriaService.funModificar(this.categoria_id, this.categoriaForm.value).subscribe(
-        (res:any)=>{
+  guardarCategoria()
+  {
+    if(this.categoria_id>0)
+      {
+      this.categoriaService.funModificar(this.categoria_id, this.categoriaForm.value).subscribe
+      (
+        (res:any)=>
+          {
           this.dialog_visible=false;
           this.getCategorias();
           this.categoria_id=-1;
           this.alerta("ACTUALIZADO", "La categoria se modifico con exito!", "success")
         },
-        (error:any)=>{
+        (error:any)=>
+        {
           this.alerta("ERROR AL ACTUALIZAR", "Verifica los datos!", "error")
         }
       );
       this.categoriaForm.reset();
     }
-    else{
-      this.categoriaService.funGuardar(this.categoriaForm.value).subscribe(
-        (res:any)=>{
+    else
+    {
+      this.categoriaService.funGuardar(this.categoriaForm.value).subscribe
+      (
+        (res:any)=>
+        {
           this.dialog_visible=false;
           this.getCategorias();
           this.alerta("REGISTRANDO", "La categoria se creo con exito!", "success")
-
-        },
+        }
+      ),
         (error:any)=>{
           this.alerta("ERROR AL REGISTRAR", "Verifica los datos!", "error")
         }
-      )
-    }
-    this.categoriaForm.reset();
+      this.categoriaForm.reset();
 
+    }
   }
 
   editarCategoria(cat:Categoria){
@@ -112,10 +119,10 @@ export class CategoriaComponent implements OnInit {
   }
 
   alerta(title:string, text:string, icon:'success'|'error'|'info'|'question'){
-    Swal.fire({
+    Swal.fire({title,text,icon});
       //title:title,
       //text:text,
       //icon: icon
-    })
+    }
   }
-}
+
