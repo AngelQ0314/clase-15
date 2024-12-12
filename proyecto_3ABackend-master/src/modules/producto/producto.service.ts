@@ -10,6 +10,10 @@ export class ProductoService {
 
   constructor(@InjectRepository(Producto) private productoRepository: Repository<Producto>){}
 
+  queryBuilder(alias:string){
+    return this.productoRepository.createQueryBuilder(alias);
+  }
+
   create(createProductoDto: CreateProductoDto) {
     return this.productoRepository.save(createProductoDto);
   }

@@ -7,7 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
-
+//import { ButtonModule } from 'primeng/button';
+//import{PasswordModule} from 'primeng/password'
+import { PrimengModule } from '../primeng/primeng.module';
 
 @NgModule({
   providers:[
@@ -21,7 +23,10 @@ import { AuthService } from './services/auth.service';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //ButtonModule,
+   // PasswordModule,
+    PrimengModule
   ]
 })
 export class AuthModule { }

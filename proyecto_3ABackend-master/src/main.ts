@@ -11,10 +11,11 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const config = new DocumentBuilder()
-  .setTitle('Product expample')
-  .setDescription('The product API description')
+  .addBearerAuth()
+  .setTitle('Backend API Nest')
+  .setDescription('Backend API Nest')
   .setVersion('1.0')
-  .addTag('product')
+  .addTag('Api Rest')
   .build();
 
   const document= SwaggerModule.createDocument(app,config);
