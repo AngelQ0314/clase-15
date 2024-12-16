@@ -19,7 +19,14 @@ export class ProductoComponent {
   ]
 
   products: any[]=[
+    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
+    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
+    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
+    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
+    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
+    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
     {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"}
+
     ];
 
     cols: any []=[];
