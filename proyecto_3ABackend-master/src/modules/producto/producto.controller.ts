@@ -6,8 +6,6 @@ import { ApiTags } from '@nestjs/swagger';
 import { Request } from 'express';
 
 @ApiTags('producto')
-
-
 @Controller('producto')
 export class ProductoController {
   constructor(private readonly productoService: ProductoService) {}

@@ -5,7 +5,6 @@ import { UpdateCategoriaDto } from './dto/update-categoria.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
-@UseGuards(JwtAuthGuard)
 
 @ApiTags('categoria')
 
@@ -20,7 +19,6 @@ export class CategoriaController {
   }
 
   @Get()
-  @UseGuards(JwtAuthGuard)
   findAll() {
     return this.categoriaService.findAll();
   }
