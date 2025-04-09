@@ -1,18 +1,20 @@
-<!--<h1>Ingresar</h1>
-{{loginForm.value|json}}
+<h1>Ingresar</h1>
+{{loginForm.value | json}}
 {{loginForm.valid}}
-<form [formGroup]="loginForm">
-    <label>Ingrese correo:</label>
-    <input type="email" formControlName="email">
-    <br>
-    <br>
-    <label>Ingrese contraseña:</label>
-    <input type="password" formControlName="password">
-    <br>
-    <br>
-    <button (click)="funIngresar()" [disabled]="!loginForm.valid">Ingresar</button>
 
-</form>-->
+<form [formGroup]="loginForm" (ngSubmit)="funIngresar()">
+  <label>Ingrese correo:</label>
+  <input type="email" formControlName="email" />
+  <br /><br />
+
+  <label>Ingrese contraseña:</label>
+  <input type="password" formControlName="password" />
+  <br /><br />
+
+  <button type="submit" [disabled]="!loginForm.valid">Ingresar</button>
+</form>
+
+
 <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
     <div class="flex flex-column align-items-center justify-content-center">
         <img src="assets/layout/images/? 'logo-dark' : 'logo-white'.svg" alt="Sakai logo" class="mb-5 w-6rem flex-shrink-0">                

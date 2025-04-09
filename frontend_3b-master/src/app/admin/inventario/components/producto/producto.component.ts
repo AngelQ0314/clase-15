@@ -10,45 +10,35 @@ export class ProductoComponent {
 
   private productoService = inject(ProductoService)
 
-  categorias: any =[
-    {name:'Ropa Dama', code:'RD'},
-    {name:'Ropa Caballero', code:'RC'},
-    {name:'Herramientas', code:'He'},
-    {name:'Tecnologia', code:'Tec'},
-    {name:'Hogar', code:'Hgr'}
+  categorias: any = [
+    { name: 'Ropa Dama', code: 'RD' },
+    { name: 'Ropa Caballero', code: 'RC' },
+    { name: 'Herramientas', code: 'He' },
+    { name: 'Tecnologia', code: 'Tec' },
+    { name: 'Hogar', code: 'Hgr' }
   ]
 
-  products: any[]=[
-    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
-    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
-    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
-    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
-    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
-    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"},
-    {id:1,nombre:"Teclado", precio:394.96, categoria_id:1, stock:12, estado:"COMPELTO"}
+  products: any[] = [];
+  cols: any[] = [];
 
-    ];
-
-    cols: any []=[];
-
-  constructor(){
+  constructor() {
     this.productoService.funListar().subscribe(
-      (res:any)=>{
-        this.products=res.data
+      (res: any) => {
+        this.products = res.data
       }
     )
   }
 
 
-  openNew(){
+  openNew() {
 
   }
 
-  editProduct(prod:any){
+  editProduct(prod: any) {
 
   }
 
-  deleteProduct(prod:any){
+  deleteProduct(prod: any) {
 
   }
 

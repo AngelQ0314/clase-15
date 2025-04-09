@@ -9,7 +9,6 @@ import { ToolbarModule } from 'primeng/toolbar';
 import {  DropdownModule } from 'primeng/dropdown';
 
 const PrimengModules=[
-  CommonModule,
   ButtonModule,
   PasswordModule,
   TableModule,

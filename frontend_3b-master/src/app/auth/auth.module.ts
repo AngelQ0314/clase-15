@@ -8,7 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 //import { ButtonModule } from 'primeng/button';
-//import{PasswordModule} from 'primeng/password'
+import{PasswordModule} from 'primeng/password'
 import { PrimengModule } from '../primeng/primeng.module';
 
 @NgModule({
@@ -25,7 +25,7 @@ import { PrimengModule } from '../primeng/primeng.module';
     ReactiveFormsModule,
     HttpClientModule,
     //ButtonModule,
-   // PasswordModule,
+   PasswordModule,
     PrimengModule
   ]
 })

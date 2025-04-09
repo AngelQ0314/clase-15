@@ -13,6 +13,7 @@ export class LoginComponent {
 
   private authService=inject(AuthService)
   private router=inject(Router)
+  
   loginForm= new FormGroup({
     email:new FormControl("", [Validators.email, Validators.required]),
     password: new FormControl("", Validators.required)
@@ -22,7 +23,7 @@ export class LoginComponent {
     this.authService.loginConNest(this.loginForm.value).subscribe(
       (res)=>{
         console.log(res)
-        this.router.navigate(['/admin'])
+        this.router.navigate(["/admin"])
       },
       (error)=>{
         console.log(error)

@@ -8,6 +8,13 @@ GET http://localhost:3000/producto
 POST http://localhost:3000/producto
 Content-Type: application/json
 
-{
+    {
+    "nombre": "IMonitor",
+    "precio": "570.95",
+    "stock": 13,
+    "categoriaId": 1
+    }
 
-} 
+
+###Busqueda por nombre
+GET http://localhost:3000/producto/back?q=IM
