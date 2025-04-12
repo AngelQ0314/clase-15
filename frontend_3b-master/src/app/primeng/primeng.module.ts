@@ -15,7 +15,7 @@ const PrimengModules=[
   DialogModule,
   InputTextModule,
   ToolbarModule,
-  DropdownModule
+  DropdownModule,
 ]
 
 @NgModule({

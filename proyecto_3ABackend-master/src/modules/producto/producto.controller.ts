@@ -37,7 +37,8 @@ export class ProductoController {
 
     const page:number =parseInt(req.query.page as any) || 1
     
-    const limit=20;
+    //const limit=10;
+    const limit=parseInt(req.query.limit as any) || 10
 
     builder.offset((page-1)*limit).limit(limit)
 
@@ -46,7 +47,7 @@ export class ProductoController {
     return {
       data: await builder.getMany(),
       total: total,
-      page,
+      page:page,
       last_page: Math.ceil(total/limit)
 
     }
