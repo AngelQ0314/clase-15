@@ -81,7 +81,10 @@ export class ProductoComponent {
 
     this.productoService.actualizarImagen(formData, this.producto_id).subscribe(
       (res:any)=>{
-        console.log(res)
+        console.log(res);
+        this.visible=false;
+        this.producto_id=-1;
+        this.listar();
       }
     )
   }

@@ -15,7 +15,7 @@ export class ProductoService {
   }
 
   actualizarImagen(formdata:any,id:number){
-    return this.http.post(`${this.baseUrl}/producto${id}/actualizar-img`, formdata)
+    return this.http.post(`${this.baseUrl}/producto/${id}/actualizar-img`, formdata)
   }
 
   constructor() { }
