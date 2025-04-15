@@ -17,6 +17,10 @@ export class ProductoComponent {
   buscador:string='';
   visible:boolean=false;
   producto_id:number=-1;
+  products: any[] = [];
+  cols: any[] = [];
+  uploadedFiles:any[]=[];
+
 
   categorias: any = [
     { name: 'Ropa Dama', code: 'RD' },
@@ -25,9 +29,6 @@ export class ProductoComponent {
     { name: 'Tecnologia', code: 'Tec' },
     { name: 'Hogar', code: 'Hgr' }
   ]
-
-  products: any[] = [];
-  cols: any[] = [];
 
   constructor() {
     this.productoService.funListar().subscribe(
@@ -43,8 +44,8 @@ export class ProductoComponent {
     console.log(event)
   }
 
-  listar(page=1, limit=10, q=''){
-    this.productoService.funListar(page,limit,q).subscribe(
+  listar(page=1, limit=10){
+    this.productoService.funListar(page,limit, this.buscador).subscribe(
       (res:any)=>{
         this.products=res.data;
         this.totalRecords=res.total;
@@ -54,11 +55,12 @@ export class ProductoComponent {
   }
   buscar(event: KeyboardEvent) {
     if (event.key === 'Enter') {
-      this.listar(1, 10, this.buscador);
+      this.listar();
     } else if (this.buscador === '') {
       this.listar(); 
     }
   }
+
   
 
   openNew() {
@@ -73,7 +75,6 @@ export class ProductoComponent {
 
   }
 
-  uploadedFiles:any[]=[];
   subirImagen(event:any){
     console.log(event.files[0])
     let formData=new FormData();

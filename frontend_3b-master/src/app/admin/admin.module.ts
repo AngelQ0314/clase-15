@@ -9,6 +9,7 @@ import { CategoriaService } from './inventario/services/categoria.service';
 import { TableModule } from 'primeng/table';
 import { InventarioModule } from './inventario/inventario.module';
 import { ProductoService } from './inventario/services/producto.service';
+import { PedidoModule } from './pedido/pedido.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProductoService } from './inventario/services/producto.service';
     AdminRoutingModule,
     AppLayoutModule,
     TableModule,
-    InventarioModule
+    InventarioModule,
+    PedidoModule
   ],
 
   providers:[

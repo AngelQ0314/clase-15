@@ -15,6 +15,12 @@ export class ClienteController {
     return this.clienteService.create(createClienteDto);
   }
 
+  @Get('q/:buscar')
+  buscarOne(@Param() params){
+    return this.clienteService.buscar(params.buscar)
+  }
+
+
   @Get()
   findAll() {
     return this.clienteService.findAll();

@@ -4,6 +4,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { CategoriaComponent } from './inventario/components/categoria/categoria.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
 import { ProductoComponent } from './inventario/components/producto/producto.component';
+import { NuevoPedidoComponent } from './pedido/components/nuevo-pedido/nuevo-pedido.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path:"producto",
         component:ProductoComponent
+      },
+      {
+        path:"pedido/nuevo",
+        component:NuevoPedidoComponent
       }
     ]
   }

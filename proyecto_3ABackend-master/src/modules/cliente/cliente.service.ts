@@ -1,11 +1,26 @@
 import { Injectable } from '@nestjs/common';
 import { CreateClienteDto } from './dto/create-cliente.dto';
 import { UpdateClienteDto } from './dto/update-cliente.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Cliente } from './entities/cliente.entity';
+import { Like, Repository } from 'typeorm';
 
 @Injectable()
 export class ClienteService {
+
+  constructor(@InjectRepository(Cliente) private clienteRepository:Repository<Cliente>){}
+
   create(createClienteDto: CreateClienteDto) {
-    return 'This action adds a new cliente';
+    return this.clienteRepository.save(createClienteDto);
+  }
+
+  buscar(buscar){
+    return this.clienteRepository.findOne({
+      where:[
+        {dni: Like("%"+buscar+"%")},
+        {nombre_completo: Like("%"+buscar+"%")}
+      ]
+    })
   }
 
   findAll() {

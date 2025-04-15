@@ -7,6 +7,7 @@ import { DialogModule } from 'primeng/dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToolbarModule } from 'primeng/toolbar';
 import {  DropdownModule } from 'primeng/dropdown';
+import { ImageModule } from 'primeng/image';
 
 const PrimengModules=[
   ButtonModule,
@@ -16,6 +17,8 @@ const PrimengModules=[
   InputTextModule,
   ToolbarModule,
   DropdownModule,
+  ImageModule
+
 ]
 
 @NgModule({
